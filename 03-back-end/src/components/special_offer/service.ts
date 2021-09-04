@@ -1,12 +1,11 @@
 import SpecialOfferModel from './model';
 import * as mysql2 from 'mysql2/promise'
+import IErrorResponse from '../../common/IErrorResponse.interface';
+import { IAddSpecialOffer,} from './dto/AddSpecialOffer';
+import BaseService from '../../services/BaseService';
 
-class SpecialOfferService{
-    private db: mysql2.Connection;
+class SpecialOfferService extends BaseService<SpecialOfferModel>{
 
-    constructor(db: mysql2.Connection) {
-        this.db= db;
-    }
     protected async adaptModel(row: any): Promise<SpecialOfferModel> {
         const item: SpecialOfferModel = new SpecialOfferModel();
 
@@ -19,22 +18,90 @@ class SpecialOfferService{
         return item;
     }
 
-    public async getAll(): Promise<SpecialOfferModel[]> {
-        const lista: SpecialOfferModel[] = [];
+    public async getAll(): Promise<SpecialOfferModel[]|IErrorResponse> {
+        return await this.getAllFromTable(
+            'special_offer',
+        );
+    }
 
-        const sql: string = "SELECT * FROM special_offer";
-        const [rows, columns] = await this.db.execute(sql);
+    public async getAllBySpecialOfferName(name: string): Promise<SpecialOfferModel[]|IErrorResponse> {
+        return await this.getAllByFieldNameFromTable(
+            'special_offer',
+            'name',
+            name    
+        );
+    }
 
-        if(Array.isArray(rows)){
-            for(const row of rows){
-                lista.push(
-                    await this.adaptModel(
-                        row
-                    )
-                )
-            }
+    public async getById(specialOfferId: number): Promise<SpecialOfferModel|null|IErrorResponse> {
+        return await this.getByIdFromTable("special_offer", specialOfferId);
+    }
+
+    public async add(data: IAddSpecialOffer): Promise<SpecialOfferModel|IErrorResponse> {
+        return new Promise<SpecialOfferModel|IErrorResponse>(async resolve => {
+            const sql = `
+                INSERT
+                    special_offer
+                SET
+                    name = ?,
+                    description = ?,
+                    video_url = ?,
+                    image_path = ?;`;
+
+            this.db.execute(sql, [ data.name, data.description, data.videoURL, data.imagePath ])
+                .then(async result => {
+                    // const [ insertInfo ] = result;
+                    const insertInfo: any = result[0];
+
+                    const newSpecialOfferId: number = +(insertInfo?.insertId);
+                    resolve(await this.getById(newSpecialOfferId));
+                })
+                .catch(error => {
+                    resolve({
+                        errorCode: error?.errno,
+                        errorMessage: error?.sqlMessage
+                    });
+                });
+        });
+    }
+
+    public async edit(
+        specialOfferId: number,
+        data: IAddSpecialOffer
+        
+    ): Promise<SpecialOfferModel|IErrorResponse|null> {
+        const result = await this.getById(specialOfferId);
+
+        if (result === null) {
+            return null;
         }
-        return lista;
+
+        if (!(result instanceof SpecialOfferModel)) {
+            return result;
+        }
+
+        return new Promise<SpecialOfferModel|IErrorResponse>(async resolve => {
+            const sql = `
+                UPDATE
+                    special_offer
+                SET
+                    name = ?,
+                    description = ?,
+                    video_url = ?,
+                    image_path = ?
+                WHERE
+                    special_offer_id = ?;`;
+
+            this.db.execute(sql, [ data.name, data.description, data.videoURL, data.imagePath, specialOfferId ])
+                .then(async result => {
+                    resolve(await this.getById(specialOfferId));
+                })
+                .catch(error => {
+                    resolve({
+                        errorCode: error?.errno,
+                        errorMessage: error?.sqlMessage
+                    });
+                });
+        });
     }
 }
 
