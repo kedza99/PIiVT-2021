@@ -103,6 +103,43 @@ class SpecialOfferService extends BaseService<SpecialOfferModel>{
                 });
         });
     }
+
+    public async delete(specialOfferId: number): Promise<IErrorResponse> {
+        return new Promise<IErrorResponse>(resolve => {
+            const sql = "DELETE FROM special_offer WHERE special_offer_id = ?;";
+            this.db.execute(sql, [specialOfferId])
+                .then(async result => {
+                    const deleteInfo: any = result[0];
+                    const deletedRowCount: number = +(deleteInfo?.affectedRows);
+
+                    if (deletedRowCount === 1) {
+                        resolve({
+                            errorCode: 0,
+                            errorMessage: "One record deleted."
+                        });
+                    } else {
+                        resolve({
+                            errorCode: -1,
+                            errorMessage: "This record could not be deleted because it does not exist."
+                        });
+                    }
+                })
+                .catch(error => {
+                    if (error?.errno === 1451) {
+                        resolve({
+                            errorCode: -2,
+                            errorMessage: "This record could not be deleted beucase it has animator(s)."
+                        });
+                        return;
+                    }
+
+                    resolve({
+                        errorCode: error?.errno,
+                        errorMessage: error?.sqlMessage
+                    });
+                })
+        });
+    }
 }
 
 export default SpecialOfferService;

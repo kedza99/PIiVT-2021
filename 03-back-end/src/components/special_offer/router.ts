@@ -13,6 +13,6 @@ export default class SpecialOfferRouter implements IRouter {
         application.get("/specialOffer/:id",    specialOfferController.getById.bind(specialOfferController));
         application.post("/specialOffer",       specialOfferController.add.bind(specialOfferController));
         application.put( "/specialOffer/:id",   specialOfferController.edit.bind(specialOfferController));
-            
+        application.delete( "/specialOffer/:id",   specialOfferController.deleteById.bind(specialOfferController));    
     }
 }
