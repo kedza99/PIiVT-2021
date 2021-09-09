@@ -5,12 +5,29 @@ import SpecialOfferRouter from './components/special_offer/router';
 import * as mysql2 from "mysql2/promise";
 import IApplicationResources from './common/IApplicationResources.interface';
 import Router from './router';
+import * as fileUpload from "express-fileupload";
+import AnimatorRouter from './components/animator/router';
+import SpecialOfferService from "./components/special_offer/service";
+import AnimatorService from "./components/animator/service";
 
 async function main(){
 const application: express.Application = express();
 
 application.use(cors());
 application.use(express.json());
+application.use(fileUpload({
+    limits: {
+        fileSize: Config.fileUpload.maxSize,
+        files: Config.fileUpload.maxFiles,
+    },
+    useTempFiles: true,
+    tempFileDir: Config.fileUpload.temporaryDirectory,
+    uploadTimeout: Config.fileUpload.timeout,
+    safeFileNames: true,
+    preserveExtension: true,
+    createParentPath: true,
+    abortOnLimit: true,
+}));
 
 const resources: IApplicationResources = {
     databaseConnection: await mysql2.createConnection({
@@ -27,6 +44,11 @@ const resources: IApplicationResources = {
 
 resources.databaseConnection.connect();
 
+resources.services = {
+    specialOfferService:      new SpecialOfferService(resources),
+    animatorService:       new AnimatorService(resources),
+};
+
 application.use(Config.server.static.route,
      express.static(Config.server.static.path,{
     index:Config.server.static.index,
@@ -38,7 +60,8 @@ application.use(Config.server.static.route,
 
 Router.setupRoutes(application, resources, [
     new SpecialOfferRouter(),
-    // ...
+    new AnimatorRouter(),
+
 ]);
 
 

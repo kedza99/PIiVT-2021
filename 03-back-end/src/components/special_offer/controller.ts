@@ -3,17 +3,13 @@ import {Request, Response, NextFunction} from "express";
 import SpecialOfferModel from './model';
 import IErrorResponse from '../../common/IErrorResponse.interface';
 import { IAddSpecialOffer, IAddSpecialOfferValidator } from './dto/AddSpecialOffer';
+import BaseController from '../../common/BaseController';
 
 
-class SpecialOfferController {
-    private specialOfferService: SpecialOfferService;
-
-    constructor(specialOfferService: SpecialOfferService) {
-        this.specialOfferService = specialOfferService;
-    }
-
+class SpecialOfferController extends BaseController{
+   
     async getAll(req: Request, res: Response, next: NextFunction) {
-        const categories = await this.specialOfferService.getAll();
+        const categories = await this.services.specialOfferService.getAll();
 
         res.send(categories);
     }
@@ -28,7 +24,7 @@ class SpecialOfferController {
             return;
         }
  
-        const data: SpecialOfferModel|null|IErrorResponse = await this.specialOfferService.getById(specialOfferId);
+        const data: SpecialOfferModel|null|IErrorResponse = await this.services.specialOfferService.getById(specialOfferId);
 
         if (data === null) {
             res.sendStatus(404);
@@ -51,7 +47,7 @@ class SpecialOfferController {
             return;
         }
 
-        const result = await this.specialOfferService.add(data as IAddSpecialOffer);
+        const result = await this.services.specialOfferService.add(data as IAddSpecialOffer);
 
         res.send(result);
     }
@@ -73,7 +69,7 @@ class SpecialOfferController {
             return;
         }
 
-        const result = await this.specialOfferService.edit(
+        const result = await this.services.specialOfferService.edit(
             specialOfferId,
             data as IAddSpecialOffer,
            
@@ -97,7 +93,7 @@ class SpecialOfferController {
             return;
         }
 
-        res.send(await this.specialOfferService.delete(specialOfferId));
+        res.send(await this.services.specialOfferService.delete(specialOfferId));
     }
 }
 
