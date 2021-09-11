@@ -2,6 +2,7 @@ import SpecialOfferService from '../components/special_offer/service';
 import AnimatorService from '../components/animator/service';
 import AnimatorDateService from '../components/animator_date/service';
 import ReservationService from '../components/reservation/service';
+import AdministratorService from '../components/administrator/service';
 
 
 export default interface IServices {
@@ -9,5 +10,6 @@ export default interface IServices {
     animatorService: AnimatorService;
     animatorDateService: AnimatorDateService;
     reservationService: ReservationService;
+    administratorService: AdministratorService;
     
 }

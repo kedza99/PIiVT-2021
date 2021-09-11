@@ -1,7 +1,7 @@
 import SpecialOfferModel from './model';
 import * as mysql2 from 'mysql2/promise'
 import IErrorResponse from '../../common/IErrorResponse.interface';
-import { IAddSpecialOffer,} from './dto/AddSpecialOffer';
+import { IAddSpecialOffer} from './dto/AddSpecialOffer';
 import BaseService from '../../common/BaseService';
 
 class SpecialOfferService extends BaseService<SpecialOfferModel>{
@@ -36,7 +36,7 @@ class SpecialOfferService extends BaseService<SpecialOfferModel>{
         return await this.getByIdFromTable("special_offer", specialOfferId);
     }
 
-    public async add(data: IAddSpecialOffer): Promise<SpecialOfferModel|IErrorResponse> {
+    public async add(data: IAddSpecialOffer, uploadedPhoto: string): Promise<SpecialOfferModel|IErrorResponse> {
         return new Promise<SpecialOfferModel|IErrorResponse>(async resolve => {
             const sql = `
                 INSERT
@@ -47,7 +47,7 @@ class SpecialOfferService extends BaseService<SpecialOfferModel>{
                     video_url = ?,
                     image_path = ?;`;
 
-            this.db.execute(sql, [ data.name, data.description, data.videoURL, data.imagePath ])
+            this.db.execute(sql, [ data.name, data.description, data.videoURL, uploadedPhoto ])
                 .then(async result => {
                     // const [ insertInfo ] = result;
                     const insertInfo: any = result[0];
@@ -86,12 +86,11 @@ class SpecialOfferService extends BaseService<SpecialOfferModel>{
                 SET
                     name = ?,
                     description = ?,
-                    video_url = ?,
-                    image_path = ?
+                    video_url = ?
                 WHERE
                     special_offer_id = ?;`;
 
-            this.db.execute(sql, [ data.name, data.description, data.videoURL, data.imagePath, specialOfferId ])
+            this.db.execute(sql, [ data.name, data.description, data.videoURL, specialOfferId ])
                 .then(async result => {
                     resolve(await this.getById(specialOfferId));
                 })

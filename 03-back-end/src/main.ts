@@ -13,6 +13,8 @@ import AnimatorDateService from './components/animator_date/service';
 import AnimatorDateRouter from './components/animator_date/router';
 import ReservationService from './components/reservation/service';
 import ReservationRouter from "./components/reservation/router";
+import AdministratorService from "./components/administrator/service";
+import AdministratorRouter from './components/administrator/router';
 
 async function main(){
 const application: express.Application = express();
@@ -52,7 +54,8 @@ resources.services = {
     specialOfferService:      new SpecialOfferService(resources),
     animatorService:       new AnimatorService(resources),
     animatorDateService:       new AnimatorDateService(resources),
-    reservationService:    new ReservationService(resources)
+    reservationService:    new ReservationService(resources),
+    administratorService:  new AdministratorService(resources)
 };
 
 application.use(Config.server.static.route,
@@ -68,7 +71,8 @@ Router.setupRoutes(application, resources, [
     new SpecialOfferRouter(),
     new AnimatorRouter(),
     new AnimatorDateRouter(),
-    new ReservationRouter()
+    new ReservationRouter(),
+    new AdministratorRouter()
     
 
 ]);

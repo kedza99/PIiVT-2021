@@ -4,7 +4,6 @@ interface IAddSpecialOffer {
     name: string;
     description: string;
     videoURL: string;
-    imagePath: string;
 }
 
 const ajv = new Ajv();
@@ -27,18 +26,11 @@ const IAddSpecialOfferValidator = ajv.compile({
             type: "string",
             maxLength: 255
         },
-
-        imagePath: {
-            type: "string",
-            maxLength: 255,
-            pattern: "\.(png|jpg)$",
-        },
     },
     required: [
         "name",
         "description",
         "videoURL",
-        "imagePath",
     ],
     additionalProperties: false,
 });
