@@ -9,6 +9,10 @@ import * as fileUpload from "express-fileupload";
 import AnimatorRouter from './components/animator/router';
 import SpecialOfferService from "./components/special_offer/service";
 import AnimatorService from "./components/animator/service";
+import AnimatorDateService from './components/animator_date/service';
+import AnimatorDateRouter from './components/animator_date/router';
+import ReservationService from './components/reservation/service';
+import ReservationRouter from "./components/reservation/router";
 
 async function main(){
 const application: express.Application = express();
@@ -47,6 +51,8 @@ resources.databaseConnection.connect();
 resources.services = {
     specialOfferService:      new SpecialOfferService(resources),
     animatorService:       new AnimatorService(resources),
+    animatorDateService:       new AnimatorDateService(resources),
+    reservationService:    new ReservationService(resources)
 };
 
 application.use(Config.server.static.route,
@@ -61,6 +67,9 @@ application.use(Config.server.static.route,
 Router.setupRoutes(application, resources, [
     new SpecialOfferRouter(),
     new AnimatorRouter(),
+    new AnimatorDateRouter(),
+    new ReservationRouter()
+    
 
 ]);
 
