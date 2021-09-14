@@ -1,5 +1,4 @@
 import AnimatorModel from './model';
-import * as mysql2 from 'mysql2/promise'
 import IErrorResponse from '../../common/IErrorResponse.interface';
 import { IAddAnimator,} from './dto/AddAnimator';
 import BaseService from '../../common/BaseService';
