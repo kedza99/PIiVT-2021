@@ -1,0 +1,4422 @@
+{
+	"info": {
+		"_postman_id": "7987209d-1c24-4f21-9038-c4f4bb1186e5",
+		"name": "Testiranje back-end dela (API)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "specialOffer",
+			"item": [
+				{
+					"name": "GET all special offers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/specialOffer",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"specialOffer"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET all special offers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/specialOffer",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"specialOffer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "362"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"16a-39rHKWVHRXwsYCxBwociGXnli8w\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 01 Sep 2021 21:34:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"specialOfferId\": 1,\n        \"name\": \"clown\",\n        \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\",\n        \"videoURL\": \"...\",\n        \"imagePath\": \"/static/specialOffers/clown.png\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "GET special offer by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/specialOffer/2",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"specialOffer",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET special offer by ID 200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/specialOffer/1",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"specialOffer",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "360"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"168-GgcHRddfaWd3bL0K9zvX68RnQOU\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Sep 2021 08:43:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"specialOfferId\": 1,\n    \"name\": \"clown\",\n    \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\",\n    \"videoURL\": \"...\",\n    \"imagePath\": \"/static/specialOffers/clown.png\"\n}"
+						},
+						{
+							"name": "GET special offer by ID when ID smaller than 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/specialOffer/0",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"specialOffer",
+										"0"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b-EFiDB1U+dmqzx9Mo2UjcZ1SJPO8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Sep 2021 08:44:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Bad Request"
+						},
+						{
+							"name": "GET special offer by ID when offer not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/specialOffer/2",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"specialOffer",
+										"2"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "9"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9-0gXL1ngzMqISxa6S1zx3F4wtLyg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 03 Sep 2021 08:46:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Not Found"
+						}
+					]
+				},
+				{
+					"name": "Delete special offer by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/specialOffer/1",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"specialOffer",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete special offer by ID 200OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/specialOffer/3",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"specialOffer",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-3Woi6Y4X+M3qVvsIQ1xzM++GrlM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Sep 2021 13:04:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorCode\": 0,\n    \"errorMessage\": \"One record deleted.\"\n}"
+						},
+						{
+							"name": "Delete non existing special offer",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/specialOffer/3",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"specialOffer",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "93"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5d-rEcAeLHHZzwz3xXTABzbxX4ny9I\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Sep 2021 13:06:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorCode\": -1,\n    \"errorMessage\": \"This record could not be deleted because it does not exist.\"\n}"
+						},
+						{
+							"name": "Delete special offer when special offer has animator(s)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/specialOffer/1",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"specialOffer",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "94"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5e-r7tv+5JcoV+dv5TVrU9qtTqal/Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 Sep 2021 14:27:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorCode\": -2,\n    \"errorMessage\": \"This record could not be deleted beucase it has animator(s).\"\n}"
+						}
+					]
+				},
+				{
+					"name": "POST specialOffer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "{\n    \"name\":\"dry ice specialist\",\n    \"description\":\"fsdfsdfds\",\n    \"videoURL\":\"realm\"\n}",
+									"type": "text"
+								},
+								{
+									"key": "photo1",
+									"type": "file",
+									"src": "/E:/Creaks/Creaks.exe"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}/specialOffer",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"specialOffer"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST specialOffer -200OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "data",
+											"value": "{\n    \"name\":\"dry ice specialist\",\n    \"description\":\"fsdfsdfds\",\n    \"videoURL\":\"realm\"\n}",
+											"type": "text"
+										},
+										{
+											"key": "photo1",
+											"type": "file",
+											"src": "/C:/Users/engin/OneDrive/Radna površina/65030cc4-bdc6-44ac-b009-c3cf4ae97596.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{API_URL}}/specialOffer",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"specialOffer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "208"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d0-QhypANJ9y+zAjJg1tnh+HPDSMCw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 19:27:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"specialOfferId\": 5,\n    \"name\": \"dry ice specialist\",\n    \"description\": \"fsdfsdfds\",\n    \"videoURL\": \"realm\",\n    \"imagePath\": \"static/uploads/2021/09/4c1f6ac2-00cc-4218-8d98-b50588c64a99-65030cc4-bdc6-44ac-b009-c3cf4ae97596.jpg\"\n}"
+						},
+						{
+							"name": "POST specialOffer where the format is bad",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "data",
+											"value": "{\n    \"name\":\"dry ice specialist\",\n    \"description\":\"fsdfsdfds\",\n    \"videoURL\":\"realm\"\n}",
+											"type": "text"
+										},
+										{
+											"key": "photo1",
+											"type": "file",
+											"src": "/E:/Creaks/Creaks.exe"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{API_URL}}/specialOffer",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"specialOffer"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-bapr2h6w4WoDs7XObpHEZKONI/0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 19:29:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Error with image photo1: \"Bad file format.\"."
+						}
+					]
+				},
+				{
+					"name": "EDIT specialOffer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"dry ice specialist\",\r\n    \"description\":\"ggg\",\r\n    \"videoURL\":\"realm\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/specialOffer/10",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"specialOffer",
+								"10"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "EDIT specialOffer - 200OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"dry ice specialist\",\r\n    \"description\":\"ggg\",\r\n    \"videoURL\":\"realm\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/specialOffer/5",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"specialOffer",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "202"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ca-Bdn11AVB7a0dwrnt4F6Yupy6Uh0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 19:39:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"specialOfferId\": 5,\n    \"name\": \"dry ice specialist\",\n    \"description\": \"ggg\",\n    \"videoURL\": \"realm\",\n    \"imagePath\": \"static/uploads/2021/09/4c1f6ac2-00cc-4218-8d98-b50588c64a99-65030cc4-bdc6-44ac-b009-c3cf4ae97596.jpg\"\n}"
+						},
+						{
+							"name": "EDIT specialOffer where ID is smaller than 1",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"dry ice specialist\",\r\n    \"description\":\"ggg\",\r\n    \"videoURL\":\"realm\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/specialOffer/0",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"specialOffer",
+										"0"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "18"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12-f+3hdSC66EM8zs+iKspfvFnH9H0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 19:40:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Invalid ID number."
+						},
+						{
+							"name": "EDIT specialOffer where ID doesnt exist",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"dry ice specialist\",\r\n    \"description\":\"ggg\",\r\n    \"videoURL\":\"realm\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/specialOffer/10",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"specialOffer",
+										"10"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "9"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9-0gXL1ngzMqISxa6S1zx3F4wtLyg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 19:40:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Not Found"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "animator",
+			"item": [
+				{
+					"name": "GET animator by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/animator/3",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"animator",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get animator by ID-200OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/animator/1",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animator",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "532"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"214-JxFfR4RMbvUGbJtV4f1fZRitDio\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Sep 2021 14:32:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"animatorId\": 1,\n    \"name\": \"Milos\",\n    \"surname\": \"Zalevic\",\n    \"nickname\": \"Zale\",\n    \"description\": \"dsafadsfafsa\",\n    \"price\": 555,\n    \"imagePath\": \"sdfsdfds.png\",\n    \"specialOfferId\": 1,\n    \"specialOffer\": {\n        \"specialOfferId\": 1,\n        \"name\": \"clown\",\n        \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\",\n        \"videoURL\": \"...\",\n        \"imagePath\": \"/static/specialOffers/clown.png\"\n    }\n}"
+						},
+						{
+							"name": "Get animator by ID when ID smaller than 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/animator/0",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animator",
+										"0"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b-EFiDB1U+dmqzx9Mo2UjcZ1SJPO8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Sep 2021 14:34:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Bad Request"
+						},
+						{
+							"name": "Get animator by ID when animator doesnt exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/animator/3",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animator",
+										"3"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "9"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9-0gXL1ngzMqISxa6S1zx3F4wtLyg\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Sep 2021 14:35:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Not Found"
+						}
+					]
+				},
+				{
+					"name": "EDIT animator by ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Aleksa\",\r\n    \"surname\": \"Nikolic\",\r\n    \"nickname\": \"Alex\",\r\n    \"description\": \"dsafadsfasa\",\r\n    \"price\": 2554,\r\n    \"specialOfferId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/animator/1",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"animator",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "EDIT an animator-200OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Aleksa\",\r\n    \"surname\": \"Nikolic\",\r\n    \"nickname\": \"Zae\",\r\n    \"description\": \"dsafadsfasa\",\r\n    \"price\": 255,\r\n    \"specialOfferId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/animator/1",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animator",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "531"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"213-ao0XsqxizKjl1XLsXzTt4WC3g58\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Sep 2021 17:19:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"animatorId\": 1,\n    \"name\": \"Aleksa\",\n    \"surname\": \"Nikolic\",\n    \"nickname\": \"Zae\",\n    \"description\": \"dsafadsfasa\",\n    \"price\": 255,\n    \"imagePath\": \"sdfsdfds.png\",\n    \"specialOfferId\": 1,\n    \"specialOffer\": {\n        \"specialOfferId\": 1,\n        \"name\": \"clown\",\n        \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\",\n        \"videoURL\": \"...\",\n        \"imagePath\": \"/static/specialOffers/clown.png\"\n    }\n}"
+						},
+						{
+							"name": "EDIT animator with bad ID",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Aleksa\",\r\n    \"surname\": \"Nikolic\",\r\n    \"nickname\": \"Zae\",\r\n    \"description\": \"dsafadsfasa\",\r\n    \"price\": 255,\r\n    \"specialOfferId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/animator/0",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animator",
+										"0"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b-EFiDB1U+dmqzx9Mo2UjcZ1SJPO8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Sep 2021 17:21:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Bad Request"
+						},
+						{
+							"name": "EDIT animator with same nickname(error)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Aleksa\",\r\n    \"surname\": \"Nikolic\",\r\n    \"nickname\": \"Alex\",\r\n    \"description\": \"dsafadsfasa\",\r\n    \"price\": 2554,\r\n    \"specialOfferId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/animator/1",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animator",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"59-eX9o+hcwLsAyLwOMScak+ieewL8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Sep 2021 17:23:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorCode\": 1062,\n    \"errorMessage\": \"Duplicate entry 'Alex' for key 'uq_animator_nickname'\"\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE animator",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/animator/3",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"animator",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DELETE animator-200OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/animator/1",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animator",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-3Woi6Y4X+M3qVvsIQ1xzM++GrlM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Sep 2021 17:50:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorCode\": 0,\n    \"errorMessage\": \"One record deleted.\"\n}"
+						},
+						{
+							"name": "DELETE animator with  ID smaller than 1",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/animator/0",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animator",
+										"0"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b-EFiDB1U+dmqzx9Mo2UjcZ1SJPO8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Sep 2021 17:51:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Bad Request"
+						},
+						{
+							"name": "DELETE non existing animator",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/animator/3",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animator",
+										"3"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "9"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9-0gXL1ngzMqISxa6S1zx3F4wtLyg\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Sep 2021 17:51:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Not Found"
+						}
+					]
+				},
+				{
+					"name": "GET all animators by special offer ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/specialOffer/4/animator",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"specialOffer",
+								"4",
+								"animator"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET all animators by special offer ID-200OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/specialOffer/1/animator",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"specialOffer",
+										"1",
+										"animator"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "591"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"24f-eyG4LfCwYGKxDSNtfSoNYqTqniw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Sep 2021 17:54:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"animatorId\": 4,\n        \"name\": \"Aleksa\",\n        \"surname\": \"Nikolic\",\n        \"nickname\": \"Alex\",\n        \"description\": \"dsafadsfafsa\",\n        \"price\": 25,\n        \"imagePath\": \"static/uploads/2021/09/0583427d-13d3-4711-a9fc-dd20bf595cc5-bjorn.jpg\",\n        \"specialOfferId\": 1,\n        \"specialOffer\": {\n            \"specialOfferId\": 1,\n            \"name\": \"clown\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\",\n            \"videoURL\": \"...\",\n            \"imagePath\": \"/static/specialOffers/clown.png\"\n        }\n    }\n]"
+						},
+						{
+							"name": "GET all animators by invalid special offer ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/specialOffer/0/animator",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"specialOffer",
+										"0",
+										"animator"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-BNS5p9gjmx4FJD5Ar77ZXUlO7ds\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Sep 2021 17:55:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Invalid special offer ID value."
+						}
+					]
+				},
+				{
+					"name": "POST animator",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "data",
+									"value": "{\n    \"name\": \"Vasilije\",\n    \"surname\": \"Redzic\",\n    \"nickname\": \"Vasa\",\n    \"description\": \"ssdfasdfrwerfsdadsfagrewa\",\n    \"price\":100,\n    \"specialOfferId\": 44\n}",
+									"type": "text"
+								},
+								{
+									"key": "photo3",
+									"type": "file",
+									"src": "/C:/Users/engin/Downloads/end.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}/animator",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"animator"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST animator- 200OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "data",
+											"value": "{\n    \"name\": \"Vasilije\",\n    \"surname\": \"Redzic\",\n    \"nickname\": \"Vasa\",\n    \"description\": \"ssdfasdfrwerfsdadsfagrewa\",\n    \"price\":100,\n    \"specialOfferId\": 5\n}",
+											"type": "text"
+										},
+										{
+											"key": "photo3",
+											"type": "file",
+											"src": "/C:/Users/engin/Downloads/end.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{API_URL}}/animator",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animator"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "444"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1bc-qXn0ObD6+D+HVLXafqpZEbivg0c\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 19:52:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"animatorId\": 6,\n    \"name\": \"Vasilije\",\n    \"surname\": \"Redzic\",\n    \"nickname\": \"Vasa\",\n    \"description\": \"ssdfasdfrwerfsdadsfagrewa\",\n    \"price\": 100,\n    \"imagePath\": \"static/uploads/2021/09/867ac442-e8da-4223-85eb-46e7af08290c-end.jpg\",\n    \"specialOfferId\": 5,\n    \"specialOffer\": {\n        \"specialOfferId\": 5,\n        \"name\": \"dry ice specialist\",\n        \"description\": \"ggg\",\n        \"videoURL\": \"realm\",\n        \"imagePath\": \"static/uploads/2021/09/4c1f6ac2-00cc-4218-8d98-b50588c64a99-65030cc4-bdc6-44ac-b009-c3cf4ae97596.jpg\"\n    }\n}"
+						},
+						{
+							"name": "POST animator where foreign key is smaller than 1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "data",
+											"value": "{\n    \"name\": \"Vasilije\",\n    \"surname\": \"Redzic\",\n    \"nickname\": \"Vasa\",\n    \"description\": \"ssdfasdfrwerfsdadsfagrewa\",\n    \"price\":100,\n    \"specialOfferId\": 0\n}",
+											"type": "text"
+										},
+										{
+											"key": "photo3",
+											"type": "file",
+											"src": "/C:/Users/engin/Downloads/end.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{API_URL}}/animator",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animator"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "171"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ab-nq6qHTT0v5CFZna0Wy6MtxMRK0Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 19:56:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"instancePath\": \"/specialOfferId\",\n        \"schemaPath\": \"#/properties/specialOfferId/minimum\",\n        \"keyword\": \"minimum\",\n        \"params\": {\n            \"comparison\": \">=\",\n            \"limit\": 1\n        },\n        \"message\": \"must be >= 1\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "animatorDate",
+			"item": [
+				{
+					"name": "GET animatorDate by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/animatorDate/3",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"animatorDate",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET animatorDate- 200OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/animatorDate/2",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animatorDate",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "664"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"298-M72gdzFzaFSboKFjyiwVsBJ8STw\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Sep 2021 09:47:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"animatorDateId\": 2,\n    \"animatorId\": 4,\n    \"reservedDate\": \"2021-09-10\",\n    \"animator\": {\n        \"animatorId\": 4,\n        \"name\": \"Aleksa\",\n        \"surname\": \"Nikolic\",\n        \"nickname\": \"Alex\",\n        \"description\": \"dsafadsfafsa\",\n        \"price\": 25,\n        \"imagePath\": \"static/uploads/2021/09/0583427d-13d3-4711-a9fc-dd20bf595cc5-bjorn.jpg\",\n        \"specialOfferId\": 1,\n        \"specialOffer\": {\n            \"specialOfferId\": 1,\n            \"name\": \"clown\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\",\n            \"videoURL\": \"...\",\n            \"imagePath\": \"/static/specialOffers/clown.png\"\n        }\n    }\n}"
+						},
+						{
+							"name": "GET animatorDate with ID smaller than 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/animatorDate/0",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animatorDate",
+										"0"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b-EFiDB1U+dmqzx9Mo2UjcZ1SJPO8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Sep 2021 09:48:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Bad Request"
+						},
+						{
+							"name": "GET animatorDate with non existing ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/animatorDate/3",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animatorDate",
+										"3"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "9"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9-0gXL1ngzMqISxa6S1zx3F4wtLyg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Sep 2021 09:49:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Not Found"
+						}
+					]
+				},
+				{
+					"name": "POST animatorDate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"animatorId\":4,\r\n    \"reservedDate\":\"2021-09-13\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/animatorDate",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"animatorDate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST animatorDate with bad date format",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"animatorId\":4,\r\n    \"reservedDate\":\"3000/09/12\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/animatorDate",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animatorDate"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "595"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"253-gJrVCUG3PfS/kEHdZ8hXSH4HtHo\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Sep 2021 10:35:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"instancePath\": \"/reservedDate\",\n        \"schemaPath\": \"#/properties/reservedDate/pattern\",\n        \"keyword\": \"pattern\",\n        \"params\": {\n            \"pattern\": \"^([0-9]{4}[-]?((0[13-9]|1[012])[-]?(0[1-9]|[12][0-9]|30)|(0[13578]|1[02])[-]?31|02[-]?(0[1-9]|1[0-9]|2[0-8]))|([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00)[-]?02[-]?29)$\"\n        },\n        \"message\": \"must match pattern \\\"^([0-9]{4}[-]?((0[13-9]|1[012])[-]?(0[1-9]|[12][0-9]|30)|(0[13578]|1[02])[-]?31|02[-]?(0[1-9]|1[0-9]|2[0-8]))|([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00)[-]?02[-]?29)$\\\"\"\n    }\n]"
+						},
+						{
+							"name": "POST animatorDate where animatorID lower than 1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"animatorId\":0,\r\n    \"reservedDate\":\"3000/09/12\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/animatorDate",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animatorDate"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "163"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a3-1tri7QXSEeS84NRg5NDqVSD1/1M\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Sep 2021 14:51:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"instancePath\": \"/animatorId\",\n        \"schemaPath\": \"#/properties/animatorId/minimum\",\n        \"keyword\": \"minimum\",\n        \"params\": {\n            \"comparison\": \">=\",\n            \"limit\": 1\n        },\n        \"message\": \"must be >= 1\"\n    }\n]"
+						},
+						{
+							"name": "POST animatorDate where animatorID doesnt exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"animatorId\":5,\r\n    \"reservedDate\":\"3000-09-12\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/animatorDate",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animatorDate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "268"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10c-akbOLszkO6ZNNJ02k0Y6meYcSq4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Sep 2021 14:52:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorCode\": 1452,\n    \"errorMessage\": \"Cannot add or update a child row: a foreign key constraint fails (`aplikacija_animatori`.`animator_date`, CONSTRAINT `fk_animator_date_animator_id` FOREIGN KEY (`animator_id`) REFERENCES `animator` (`animator_id`) ON UPDATE CASCADE)\"\n}"
+						},
+						{
+							"name": "POST animatorDate- 200OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"animatorId\":4,\r\n    \"reservedDate\":\"2021-09-13\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/animatorDate",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animatorDate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "664"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"298-+JCFOmgK7TP+x8PJStKLVeUQYs0\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Sep 2021 14:54:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"animatorDateId\": 8,\n    \"animatorId\": 4,\n    \"reservedDate\": \"2021-09-13\",\n    \"animator\": {\n        \"animatorId\": 4,\n        \"name\": \"Aleksa\",\n        \"surname\": \"Nikolic\",\n        \"nickname\": \"Alex\",\n        \"description\": \"dsafadsfafsa\",\n        \"price\": 25,\n        \"imagePath\": \"static/uploads/2021/09/0583427d-13d3-4711-a9fc-dd20bf595cc5-bjorn.jpg\",\n        \"specialOfferId\": 1,\n        \"specialOffer\": {\n            \"specialOfferId\": 1,\n            \"name\": \"clown\",\n            \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\",\n            \"videoURL\": \"...\",\n            \"imagePath\": \"/static/specialOffers/clown.png\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get all animatorDates by animatorID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/animator/5/animatorDate",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"animator",
+								"5",
+								"animatorDate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all animatorDates by animatorID- 200OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/animator/4/animatorDate",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animator",
+										"4",
+										"animatorDate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3991"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f97-xSdZ/LQeDzRsBOHCzNWs+bU8jOs\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Sep 2021 14:56:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"animatorDateId\": 2,\n        \"animatorId\": 4,\n        \"reservedDate\": \"2021-09-10\",\n        \"animator\": {\n            \"animatorId\": 4,\n            \"name\": \"Aleksa\",\n            \"surname\": \"Nikolic\",\n            \"nickname\": \"Alex\",\n            \"description\": \"dsafadsfafsa\",\n            \"price\": 25,\n            \"imagePath\": \"static/uploads/2021/09/0583427d-13d3-4711-a9fc-dd20bf595cc5-bjorn.jpg\",\n            \"specialOfferId\": 1,\n            \"specialOffer\": {\n                \"specialOfferId\": 1,\n                \"name\": \"clown\",\n                \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\",\n                \"videoURL\": \"...\",\n                \"imagePath\": \"/static/specialOffers/clown.png\"\n            }\n        }\n    },\n    {\n        \"animatorDateId\": 3,\n        \"animatorId\": 4,\n        \"reservedDate\": \"2021-09-11\",\n        \"animator\": {\n            \"animatorId\": 4,\n            \"name\": \"Aleksa\",\n            \"surname\": \"Nikolic\",\n            \"nickname\": \"Alex\",\n            \"description\": \"dsafadsfafsa\",\n            \"price\": 25,\n            \"imagePath\": \"static/uploads/2021/09/0583427d-13d3-4711-a9fc-dd20bf595cc5-bjorn.jpg\",\n            \"specialOfferId\": 1,\n            \"specialOffer\": {\n                \"specialOfferId\": 1,\n                \"name\": \"clown\",\n                \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\",\n                \"videoURL\": \"...\",\n                \"imagePath\": \"/static/specialOffers/clown.png\"\n            }\n        }\n    },\n    {\n        \"animatorDateId\": 5,\n        \"animatorId\": 4,\n        \"reservedDate\": \"2021-09-12\",\n        \"animator\": {\n            \"animatorId\": 4,\n            \"name\": \"Aleksa\",\n            \"surname\": \"Nikolic\",\n            \"nickname\": \"Alex\",\n            \"description\": \"dsafadsfafsa\",\n            \"price\": 25,\n            \"imagePath\": \"static/uploads/2021/09/0583427d-13d3-4711-a9fc-dd20bf595cc5-bjorn.jpg\",\n            \"specialOfferId\": 1,\n            \"specialOffer\": {\n                \"specialOfferId\": 1,\n                \"name\": \"clown\",\n                \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\",\n                \"videoURL\": \"...\",\n                \"imagePath\": \"/static/specialOffers/clown.png\"\n            }\n        }\n    },\n    {\n        \"animatorDateId\": 8,\n        \"animatorId\": 4,\n        \"reservedDate\": \"2021-09-13\",\n        \"animator\": {\n            \"animatorId\": 4,\n            \"name\": \"Aleksa\",\n            \"surname\": \"Nikolic\",\n            \"nickname\": \"Alex\",\n            \"description\": \"dsafadsfafsa\",\n            \"price\": 25,\n            \"imagePath\": \"static/uploads/2021/09/0583427d-13d3-4711-a9fc-dd20bf595cc5-bjorn.jpg\",\n            \"specialOfferId\": 1,\n            \"specialOffer\": {\n                \"specialOfferId\": 1,\n                \"name\": \"clown\",\n                \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\",\n                \"videoURL\": \"...\",\n                \"imagePath\": \"/static/specialOffers/clown.png\"\n            }\n        }\n    },\n    {\n        \"animatorDateId\": 4,\n        \"animatorId\": 4,\n        \"reservedDate\": \"2021/09/11\",\n        \"animator\": {\n            \"animatorId\": 4,\n            \"name\": \"Aleksa\",\n            \"surname\": \"Nikolic\",\n            \"nickname\": \"Alex\",\n            \"description\": \"dsafadsfafsa\",\n            \"price\": 25,\n            \"imagePath\": \"static/uploads/2021/09/0583427d-13d3-4711-a9fc-dd20bf595cc5-bjorn.jpg\",\n            \"specialOfferId\": 1,\n            \"specialOffer\": {\n                \"specialOfferId\": 1,\n                \"name\": \"clown\",\n                \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\",\n                \"videoURL\": \"...\",\n                \"imagePath\": \"/static/specialOffers/clown.png\"\n            }\n        }\n    },\n    {\n        \"animatorDateId\": 6,\n        \"animatorId\": 4,\n        \"reservedDate\": \"3000-09-12\",\n        \"animator\": {\n            \"animatorId\": 4,\n            \"name\": \"Aleksa\",\n            \"surname\": \"Nikolic\",\n            \"nickname\": \"Alex\",\n            \"description\": \"dsafadsfafsa\",\n            \"price\": 25,\n            \"imagePath\": \"static/uploads/2021/09/0583427d-13d3-4711-a9fc-dd20bf595cc5-bjorn.jpg\",\n            \"specialOfferId\": 1,\n            \"specialOffer\": {\n                \"specialOfferId\": 1,\n                \"name\": \"clown\",\n                \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\",\n                \"videoURL\": \"...\",\n                \"imagePath\": \"/static/specialOffers/clown.png\"\n            }\n        }\n    }\n]"
+						},
+						{
+							"name": "Get all animatorDates by animatorID where animatorID smaller than 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/animator/0/animatorDate",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animator",
+										"0",
+										"animatorDate"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-esWtRrk0U9wZtR7LZcrMKqgoYfQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Sep 2021 14:58:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Invalid animator ID value."
+						},
+						{
+							"name": "Get all animatorDates by animatorID where animatorID doesnt exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/animator/5/animatorDate",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animator",
+										"5",
+										"animatorDate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Sep 2021 14:59:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						}
+					]
+				},
+				{
+					"name": "DELETE animatorDate",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/animatorDate/0",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"animatorDate",
+								"0"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DELETE animatorDate-200Ok",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/animatorDate/6",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animatorDate",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-3Woi6Y4X+M3qVvsIQ1xzM++GrlM\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Sep 2021 15:00:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorCode\": 0,\n    \"errorMessage\": \"One record deleted.\"\n}"
+						},
+						{
+							"name": "DELETE animatorDate where animatorDateID doesnt exist",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/animatorDate/9",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animatorDate",
+										"9"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "9"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9-0gXL1ngzMqISxa6S1zx3F4wtLyg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Sep 2021 15:01:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Not Found"
+						},
+						{
+							"name": "DELETE animatorDate where animatorDateID smaller than 1",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/animatorDate/0",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animatorDate",
+										"0"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b-EFiDB1U+dmqzx9Mo2UjcZ1SJPO8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Sep 2021 15:01:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Bad Request"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "reservation",
+			"item": [
+				{
+					"name": "GET reservation by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/reservation/5",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"reservation",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET reservation by ID - 200OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/reservation",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"reservation"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "902"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"386-sQ+GL5bOJfivoA4DSjUbkMSWBjQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Sep 2021 17:55:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"reservationId\": 1,\n    \"clientName\": \"Aleksa\",\n    \"clientSurname\": \"Kedzic\",\n    \"clientEmail\": \"aleksa@singimail.rs\",\n    \"clientPhoneNumber\": \"0633334444\",\n    \"postalAddress\": \"Cegarska43\",\n    \"animatorDateId\": 5,\n    \"createdAt\": \"2021-09-10T18:53:37.000Z\",\n    \"animatorDate\": {\n        \"animatorDateId\": 5,\n        \"animatorId\": 4,\n        \"reservedDate\": \"2021-09-12\",\n        \"animator\": {\n            \"animatorId\": 4,\n            \"name\": \"Aleksa\",\n            \"surname\": \"Nikolic\",\n            \"nickname\": \"Alex\",\n            \"description\": \"dsafadsfafsa\",\n            \"price\": 25,\n            \"imagePath\": \"static/uploads/2021/09/0583427d-13d3-4711-a9fc-dd20bf595cc5-bjorn.jpg\",\n            \"specialOfferId\": 1,\n            \"specialOffer\": {\n                \"specialOfferId\": 1,\n                \"name\": \"clown\",\n                \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\",\n                \"videoURL\": \"...\",\n                \"imagePath\": \"/static/specialOffers/clown.png\"\n            }\n        }\n    }\n}"
+						},
+						{
+							"name": "GET reservation by ID where ID is smaller than 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/reservation/0",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"reservation",
+										"0"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b-EFiDB1U+dmqzx9Mo2UjcZ1SJPO8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 15:22:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Bad Request"
+						},
+						{
+							"name": "GET reservation by ID where reservation ID doesnt exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/reservation/5",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"reservation",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-vyGp6PvFo4RvsFtPoIWeCReyIC8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 15:23:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{}"
+						}
+					]
+				},
+				{
+					"name": "POST reservation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientName\": \"Zoran\",\r\n    \"clientSurname\": \"Zoranic\",\r\n    \"clientEmail\": \"zoran@singimail.rs\",\r\n    \"clientPhoneNumber\": \"060222113\",\r\n    \"postalAddress\": \"zoranova14\",\r\n    \"animatorDateId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/reservation",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"reservation"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST reservation - 200Ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"clientName\": \"Goran\",\r\n    \"clientSurname\": \"Nikolic\",\r\n    \"clientEmail\": \"nikolic@singimail.rs\",\r\n    \"clientPhoneNumber\": \"0602221111\",\r\n    \"postalAddress\": \"goranova14\",\r\n    \"animatorDateId\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/reservation",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"reservation"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "903"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"387-1BPc0PJxrWccf9uvQo01Rx0/bHk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 16:15:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"reservationId\": 2,\n    \"clientName\": \"Goran\",\n    \"clientSurname\": \"Nikolic\",\n    \"clientEmail\": \"nikolic@singimail.rs\",\n    \"clientPhoneNumber\": \"0602221111\",\n    \"postalAddress\": \"goranova14\",\n    \"animatorDateId\": 2,\n    \"createdAt\": \"2021-09-11T17:15:02.000Z\",\n    \"animatorDate\": {\n        \"animatorDateId\": 2,\n        \"animatorId\": 4,\n        \"reservedDate\": \"2021-09-10\",\n        \"animator\": {\n            \"animatorId\": 4,\n            \"name\": \"Aleksa\",\n            \"surname\": \"Nikolic\",\n            \"nickname\": \"Alex\",\n            \"description\": \"dsafadsfafsa\",\n            \"price\": 25,\n            \"imagePath\": \"static/uploads/2021/09/0583427d-13d3-4711-a9fc-dd20bf595cc5-bjorn.jpg\",\n            \"specialOfferId\": 1,\n            \"specialOffer\": {\n                \"specialOfferId\": 1,\n                \"name\": \"clown\",\n                \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\",\n                \"videoURL\": \"...\",\n                \"imagePath\": \"/static/specialOffers/clown.png\"\n            }\n        }\n    }\n}"
+						},
+						{
+							"name": "POST reservation - duplicate entry for animatorDateId",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"clientName\": \"Zoran\",\r\n    \"clientSurname\": \"Zoranic\",\r\n    \"clientEmail\": \"zoran@singimail.rs\",\r\n    \"clientPhoneNumber\": \"060222113\",\r\n    \"postalAddress\": \"zoranova14\",\r\n    \"animatorDateId\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/reservation",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"reservation"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "97"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"61-hG6dAGeqlzQF/Wz6FSCqheRamR8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 16:17:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorCode\": 1062,\n    \"errorMessage\": \"Duplicate entry '2' for key 'uq_reservation_animator_date_id'\"\n}"
+						}
+					]
+				},
+				{
+					"name": "EDIT reservation",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n    \"clientName\": \"Zora\",\r\n    \"clientSurname\": \"Zoranic\",\r\n    \"clientEmail\": \"zoran@singimail.rs\",\r\n    \"clientPhoneNumber\": \"060222113\",\r\n    \"postalAddress\": \"zzoranova14\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/reservation/10",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"reservation",
+								"10"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "EDIT reservation - 200OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n{\r\n    \"clientName\": \"Zora\",\r\n    \"clientSurname\": \"Zoranic\",\r\n    \"clientEmail\": \"zoran@singimail.rs\",\r\n    \"clientPhoneNumber\": \"060222113\",\r\n    \"postalAddress\": \"zzoranova14\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/reservation/2",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"reservation",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "900"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"384-JetcXKvq6r3CitJjb4Q9Rwub8pM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 16:21:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"reservationId\": 2,\n    \"clientName\": \"Zora\",\n    \"clientSurname\": \"Zoranic\",\n    \"clientEmail\": \"zoran@singimail.rs\",\n    \"clientPhoneNumber\": \"060222113\",\n    \"postalAddress\": \"zzoranova14\",\n    \"animatorDateId\": 2,\n    \"createdAt\": \"2021-09-11T17:15:02.000Z\",\n    \"animatorDate\": {\n        \"animatorDateId\": 2,\n        \"animatorId\": 4,\n        \"reservedDate\": \"2021-09-10\",\n        \"animator\": {\n            \"animatorId\": 4,\n            \"name\": \"Aleksa\",\n            \"surname\": \"Nikolic\",\n            \"nickname\": \"Alex\",\n            \"description\": \"dsafadsfafsa\",\n            \"price\": 25,\n            \"imagePath\": \"static/uploads/2021/09/0583427d-13d3-4711-a9fc-dd20bf595cc5-bjorn.jpg\",\n            \"specialOfferId\": 1,\n            \"specialOffer\": {\n                \"specialOfferId\": 1,\n                \"name\": \"clown\",\n                \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\",\n                \"videoURL\": \"...\",\n                \"imagePath\": \"/static/specialOffers/clown.png\"\n            }\n        }\n    }\n}"
+						},
+						{
+							"name": "EDIT reservation where Id cant be smaller than 1",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n{\r\n    \"clientName\": \"Zora\",\r\n    \"clientSurname\": \"Zoranic\",\r\n    \"clientEmail\": \"zoran@singimail.rs\",\r\n    \"clientPhoneNumber\": \"060222113\",\r\n    \"postalAddress\": \"zzoranova14\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/reservation/0",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"reservation",
+										"0"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-RVgWwAYN6oFX4b0eMubjXymRD/8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 16:23:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "The ID value cannot be smaller than 1."
+						},
+						{
+							"name": "EDIT reservation where reservation doesnt exist",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\r\n{\r\n    \"clientName\": \"Zora\",\r\n    \"clientSurname\": \"Zoranic\",\r\n    \"clientEmail\": \"zoran@singimail.rs\",\r\n    \"clientPhoneNumber\": \"060222113\",\r\n    \"postalAddress\": \"zzoranova14\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/reservation/10",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"reservation",
+										"10"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "9"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9-0gXL1ngzMqISxa6S1zx3F4wtLyg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 16:23:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Not Found"
+						}
+					]
+				},
+				{
+					"name": "GET all by animatorDateId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/animatorDate/10/reservation",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"animatorDate",
+								"10",
+								"reservation"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET all by animatorDateId - 200OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/animatorDate/5/reservation",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animatorDate",
+										"5",
+										"reservation"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "904"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"388-h+ZMoGpwahgKFuKJoO/7t5fj17Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 16:37:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"reservationId\": 1,\n        \"clientName\": \"Aleksa\",\n        \"clientSurname\": \"Kedzic\",\n        \"clientEmail\": \"aleksa@singimail.rs\",\n        \"clientPhoneNumber\": \"0633334444\",\n        \"postalAddress\": \"Cegarska43\",\n        \"animatorDateId\": 5,\n        \"createdAt\": \"2021-09-10T18:53:37.000Z\",\n        \"animatorDate\": {\n            \"animatorDateId\": 5,\n            \"animatorId\": 4,\n            \"reservedDate\": \"2021-09-12\",\n            \"animator\": {\n                \"animatorId\": 4,\n                \"name\": \"Aleksa\",\n                \"surname\": \"Nikolic\",\n                \"nickname\": \"Alex\",\n                \"description\": \"dsafadsfafsa\",\n                \"price\": 25,\n                \"imagePath\": \"static/uploads/2021/09/0583427d-13d3-4711-a9fc-dd20bf595cc5-bjorn.jpg\",\n                \"specialOfferId\": 1,\n                \"specialOffer\": {\n                    \"specialOfferId\": 1,\n                    \"name\": \"clown\",\n                    \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\",\n                    \"videoURL\": \"...\",\n                    \"imagePath\": \"/static/specialOffers/clown.png\"\n                }\n            }\n        }\n    }\n]"
+						},
+						{
+							"name": "GET all by animatorDateId when ID smaller than 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/animatorDate/0/reservation",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animatorDate",
+										"0",
+										"reservation"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e-eDxKjee6yd9PJY4rO94L5Z6H2Jw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 16:38:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Invalid animatorDate ID value."
+						},
+						{
+							"name": "GET all by animatorDateId when ID doesnt exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/animatorDate/10/reservation",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"animatorDate",
+										"10",
+										"reservation"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 16:39:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						}
+					]
+				},
+				{
+					"name": "DELETE reservation",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/reservation/10",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"reservation",
+								"10"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DELETE reservation - 200OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/reservation/2",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"reservation",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-3Woi6Y4X+M3qVvsIQ1xzM++GrlM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 16:44:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorCode\": 0,\n    \"errorMessage\": \"One record deleted.\"\n}"
+						},
+						{
+							"name": "DELETE reservation where ID is smaller than 1",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/reservation/0",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"reservation",
+										"0"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b-EFiDB1U+dmqzx9Mo2UjcZ1SJPO8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 16:44:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Bad Request"
+						},
+						{
+							"name": "DELETE reservation where ID doesnt exist",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/reservation/10",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"reservation",
+										"10"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "9"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9-0gXL1ngzMqISxa6S1zx3F4wtLyg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 16:45:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Not Found"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "administrator",
+			"item": [
+				{
+					"name": "GET all administrators",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/administrator",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"administrator"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET all administrators- 200OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/administrator",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"administrator"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "271"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10f-+ZrTeU6IuRBN0PT84CSliaonEZ4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 17:24:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"administratorId\": 1,\n        \"username\": \"Zoran\",\n        \"passwordHash\": \"$2b$11$OXpPTBkfYOnTH6ctKg.qzu9zGauTMrmiUIy4oopZkKyFSlZl1g5eu\",\n        \"isActive\": true\n    },\n    {\n        \"administratorId\": 2,\n        \"username\": \"Goran\",\n        \"passwordHash\": \"$2b$11$hJJ/rEUgUuKCFvYko40zaeXgbSft0qUjf8ML4SAwIyB4n8tIt9YMy\",\n        \"isActive\": true\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "POST administrator",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Goran\",\r\n    \"password\": \"66674da\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/administrator",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"administrator"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST administrator- 200OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Goran\",\r\n    \"password\": \"66674daaaaaa\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/administrator",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"administrator"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "134"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"86-hr0acsPWAWygo/f5RZb+cTLfRyw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 17:22:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"administratorId\": 2,\n    \"username\": \"Goran\",\n    \"passwordHash\": \"$2b$11$hJJ/rEUgUuKCFvYko40zaeXgbSft0qUjf8ML4SAwIyB4n8tIt9YMy\",\n    \"isActive\": true\n}"
+						},
+						{
+							"name": "POST administrator - duplicate entry for username",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Goran\",\r\n    \"password\": \"66674da\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/administrator",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"administrator"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "95"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5f-8mtyjSUd6jlT5mnRDtA8HGubgWY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 17:23:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorCode\": 1062,\n    \"errorMessage\": \"Duplicate entry 'Goran' for key 'uq_administrator_username'\"\n}"
+						}
+					]
+				},
+				{
+					"name": "EDIT administrator",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"222231\" ,\r\n    \"isActive\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{API_URL}}/administrator/6",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"administrator",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "EDIT administrator- 200OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"222231\" ,\r\n    \"isActive\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/administrator/2",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"administrator",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "135"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"87-YrnA8AQljzZcaBM9LQlvfTVgZB0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 17:40:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"administratorId\": 2,\n    \"username\": \"Goran\",\n    \"passwordHash\": \"$2b$11$dvFySZ37gpKZnqD//Z3hyuarvlcHm0sB9z01YRF1b21ftPipgQfHS\",\n    \"isActive\": false\n}"
+						},
+						{
+							"name": "EDIT administrator where ID cant be smaller than 1",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"222231\" ,\r\n    \"isActive\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/administrator/0",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"administrator",
+										"0"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-RVgWwAYN6oFX4b0eMubjXymRD/8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 17:41:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "The ID value cannot be smaller than 1."
+						},
+						{
+							"name": "EDIT administrator where ID doesnt exist",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"222231\" ,\r\n    \"isActive\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/administrator/6",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"administrator",
+										"6"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "9"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9-0gXL1ngzMqISxa6S1zx3F4wtLyg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 17:42:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Not Found"
+						}
+					]
+				},
+				{
+					"name": "GET administrator by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/administrator/10",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"administrator",
+								"10"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET administrator by ID- 200OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/administrator/2",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"administrator",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "135"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"87-YrnA8AQljzZcaBM9LQlvfTVgZB0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 17:43:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"administratorId\": 2,\n    \"username\": \"Goran\",\n    \"passwordHash\": \"$2b$11$dvFySZ37gpKZnqD//Z3hyuarvlcHm0sB9z01YRF1b21ftPipgQfHS\",\n    \"isActive\": false\n}"
+						},
+						{
+							"name": "GET administrator by ID where ID is smaller than 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/administrator/0",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"administrator",
+										"0"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-RVgWwAYN6oFX4b0eMubjXymRD/8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 17:43:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "The ID value cannot be smaller than 1."
+						},
+						{
+							"name": "GET administrator by ID where ID doesnt exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/administrator/10",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"administrator",
+										"10"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "9"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9-0gXL1ngzMqISxa6S1zx3F4wtLyg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 17:44:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Not Found"
+						}
+					]
+				},
+				{
+					"name": "DELETE administrator by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}/administrator/10",
+							"host": [
+								"{{API_URL}}"
+							],
+							"path": [
+								"administrator",
+								"10"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DELETE administrator by ID - 200OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/administrator/2",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"administrator",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"33-+/zHhg+84sQie8xvQmB03Ijwjc4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 17:45:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorCode\": 0,\n    \"errorMessage\": \"Deleted 1 records.\"\n}"
+						},
+						{
+							"name": "DELETE administrator by ID where ID is smaller than 1",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/administrator/0",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"administrator",
+										"0"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-RVgWwAYN6oFX4b0eMubjXymRD/8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 17:46:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "The ID value cannot be smaller than 1."
+						},
+						{
+							"name": "DELETE administrator by ID where ID doesnt exist",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/administrator/10",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"administrator",
+										"10"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"33-fdUR+kEYPKq0iXOrFKT1mW2QMoM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Sep 2021 17:47:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errorCode\": 0,\n    \"errorMessage\": \"Deleted 0 records.\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_URL",
+			"value": "http://localhost:4080"
+		}
+	]
+}
