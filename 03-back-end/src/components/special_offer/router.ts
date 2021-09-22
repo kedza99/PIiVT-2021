@@ -1,5 +1,4 @@
 import * as express from "express";
-import SpecialOfferService from './service';
 import SpecialOfferController from './controller';
 import IApplicationResources from '../../common/IApplicationResources.interface';
 import IRouter from '../../common/IRouter.interface';

@@ -11,7 +11,7 @@ export default class AnimatorRouter implements IRouter {
         application.post("/animator",       animatorController.add.bind(animatorController));
         application.put( "/animator/:id",   animatorController.edit.bind(animatorController));
         application.delete( "/animator/:id",   animatorController.deleteById.bind(animatorController));
-        application.get("/specialOffer/:id/animator",    animatorController.getAllBySpecialOfferId.bind(animatorController));
+        application.get("/specialOffer/:sid/animator",    animatorController.getAllBySpecialOfferId.bind(animatorController));
 
     }
 }

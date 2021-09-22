@@ -1,5 +1,4 @@
 import SpecialOfferModel from './model';
-import * as mysql2 from 'mysql2/promise'
 import IErrorResponse from '../../common/IErrorResponse.interface';
 import { IAddSpecialOffer} from './dto/AddSpecialOffer';
 import BaseService from '../../common/BaseService';

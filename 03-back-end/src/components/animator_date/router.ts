@@ -10,7 +10,7 @@ export default class AnimatorDateRouter implements IRouter {
         application.get("/animatorDate/:id",    animatorDateController.getById.bind(animatorDateController));
         application.post("/animatorDate",       animatorDateController.add.bind(animatorDateController));
         application.delete( "/animatorDate/:id",   animatorDateController.deleteById.bind(animatorDateController));
-        application.get("/animator/:id/animatorDate",    animatorDateController.getAllByAnimatorId.bind(animatorDateController));
+        application.get("/animator/:aid/animatorDate",    animatorDateController.getAllByAnimatorId.bind(animatorDateController));
 
     }
 }
