@@ -15,6 +15,7 @@ import ReservationService from './components/reservation/service';
 import ReservationRouter from "./components/reservation/router";
 import AdministratorService from "./components/administrator/service";
 import AdministratorRouter from './components/administrator/router';
+import AuthRouter from './components/auth/router';
 
 async function main(){
 const application: express.Application = express();
@@ -72,9 +73,8 @@ Router.setupRoutes(application, resources, [
     new AnimatorRouter(),
     new AnimatorDateRouter(),
     new ReservationRouter(),
-    new AdministratorRouter()
-    
-
+    new AdministratorRouter(),
+    new AuthRouter()
 ]);
 
 

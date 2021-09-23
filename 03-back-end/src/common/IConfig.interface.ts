@@ -1,3 +1,9 @@
+import{Algorithm} from "jsonwebtoken";
+interface TokenKeyOptions{
+    private:string;
+    public:string;
+    duration: number;
+}
 export default interface IConfig{
     server: {
         port: number,
@@ -41,4 +47,14 @@ export default interface IConfig{
             }[],
         },
     },
+    auth: {
+        administrator:{
+            auth: TokenKeyOptions,
+            refresh:TokenKeyOptions,
+            issuer: string,
+            algorithm: Algorithm,
+            
+        },
+        allowRequestsEvenWithoutValidTokens: boolean 
+    }
 };
