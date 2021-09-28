@@ -1,9 +1,9 @@
 import React from 'react';
-import './Application.css';
+import './Application.sass';
 
 export default function Application() {
   return (
-    <div className="App">
+    <div className="Application container">
       ...
     </div>
   );
