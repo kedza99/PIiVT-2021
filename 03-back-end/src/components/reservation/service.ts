@@ -108,40 +108,55 @@ class ReservationService extends BaseService<ReservationModel>{
         });
     }
 
-    public async delete(reservationId: number): Promise<IErrorResponse> {
-        return new Promise<IErrorResponse>(resolve => {
+    public async deleteReservation(reservationId: number): Promise<boolean> {
+        return new Promise<boolean>(resolve => {
             const sql = "DELETE FROM reservation WHERE reservation_id = ?;";
             this.db.execute(sql, [reservationId])
-                .then(async result => {
-                    const deleteInfo: any = result[0];
-                    const deletedRowCount: number = +(deleteInfo?.affectedRows);
+                .then(() => resolve(true))
+                .catch(() => resolve(false));
+            });
+    }
 
-                    if (deletedRowCount === 1) {
-                        resolve({
-                            errorCode: 0,
-                            errorMessage: "One record deleted."
-                        });
-                    } else {
-                        resolve({
-                            errorCode: -1,
-                            errorMessage: "This record could not be deleted because it does not exist."
-                        });
-                    }
+    public async deleteAnimatorDate(animatorDateId: number): Promise<boolean> {
+        return new Promise<boolean>(resolve => {
+            const sql = "DELETE FROM animator_date WHERE animator_date_id = ?;";
+            this.db.execute(sql, [animatorDateId])
+                .then(() => resolve(true))
+                .catch(() => resolve(false));
+            });
+    }
+
+    public async delete(reservationId: number): Promise<IErrorResponse|null> {
+        return new Promise<IErrorResponse>(async resolve => {
+
+            const reservation = await this.getById(reservationId) as ReservationModel;
+            const animatorDateId = +(reservation.animatorDateId);
+
+            this.db.beginTransaction()
+                .then(async () => {
+                    if (await this.deleteReservation(reservationId)) return;
+                    throw { errno: -1003, sqlMessage: "Could not delete reservation.", };
                 })
-                .catch(error => {
-                    if (error?.errno === 1451) {
-                        resolve({
-                            errorCode: -2,
-                            errorMessage: "This record could not be deleted beucase it has animatorDate"
-                        });
-                        return;
-                    }
-
+                .then(async () => {
+                    if (await this.deleteAnimatorDate(animatorDateId)) return;
+                    throw { errno: -1002, sqlMessage: "Could not delete animatorDate.", };
+                })
+                .then(async () => {
+                    await this.db.commit();
+                })
+                .then(() => {
+                    resolve({
+                        errorCode: 0,
+                        errorMessage: "Reservation deleted!",
+                    });
+                })
+                .catch(async error => {
+                    await this.db.rollback();
                     resolve({
                         errorCode: error?.errno,
                         errorMessage: error?.sqlMessage
                     });
-                })
+                });
         });
     }
 }

@@ -9,7 +9,7 @@ import * as path from "path";
 import * as sharp from "sharp";
 
 
-class ArticleController extends BaseController {
+class AnimatorController extends BaseController {
     public async getById(req: Request, res: Response) {
         const id: number = +(req.params?.id);
 
@@ -203,4 +203,4 @@ class ArticleController extends BaseController {
     }
 }
 
-export default ArticleController;
+export default AnimatorController;

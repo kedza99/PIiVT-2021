@@ -3,6 +3,9 @@ import IErrorResponse from '../../common/IErrorResponse.interface';
 import { IAddAnimator,} from './dto/AddAnimator';
 import BaseService from '../../common/BaseService';
 import SpecialOfferModel from '../special_offer/model';
+import * as fs from "fs";
+import * as path from 'path';
+import Config from '../../config/dev';
 
 class AnimatorService extends BaseService<AnimatorModel>{
 
@@ -124,15 +127,59 @@ class AnimatorService extends BaseService<AnimatorModel>{
         });
     }
 
+    private async returnAnimatorImagePath(animatorId: number): Promise<string[]> {
+        return new Promise<string[]>(async resolve => {
+            const [ rows ] = await this.db.execute(
+                `SELECT image_path FROM animator WHERE animator_id = ?;`,
+                [ animatorId ]
+            );
+
+            if (!Array.isArray(rows) || rows.length === 0) return resolve([]);
+
+            const fileToDelete = rows.map(row => row.image_path);      
+
+            resolve(fileToDelete);
+        });
+    }
+
+    private deleteAnimatorPhotoAndResizedVersion(filesToDelete: string[]) {
+        try {
+                const fileToDelete =  filesToDelete[0];
+                fs.unlinkSync(fileToDelete);
+
+                const pathParts = path.parse(fileToDelete);
+
+                const directory = pathParts.dir;
+                const filename  = pathParts.name;
+                const extension = pathParts.ext;
+
+                const resizedImagePath = directory + "/" +
+                                             filename +
+                                             Config.fileUpload.photos.resizes[1].sufix +
+                                             extension;
+
+                fs.unlinkSync(resizedImagePath);
+            }
+        catch (e) { }
+    }
+
+    private async fileToDelete (animatorId:number) {
+        const file = await this.returnAnimatorImagePath(animatorId);
+        this.deleteAnimatorPhotoAndResizedVersion(file);
+    }
+
     public async delete(animatorId: number): Promise<IErrorResponse> {
         return new Promise<IErrorResponse>(resolve => {
+            this.fileToDelete(animatorId);
             const sql = "DELETE FROM animator WHERE animator_id = ?;";
             this.db.execute(sql, [animatorId])
                 .then(async result => {
                     const deleteInfo: any = result[0];
                     const deletedRowCount: number = +(deleteInfo?.affectedRows);
+                    
 
                     if (deletedRowCount === 1) {
+                        
                         resolve({
                             errorCode: 0,
                             errorMessage: "One record deleted."

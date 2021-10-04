@@ -2,6 +2,9 @@ import SpecialOfferModel from './model';
 import IErrorResponse from '../../common/IErrorResponse.interface';
 import { IAddSpecialOffer} from './dto/AddSpecialOffer';
 import BaseService from '../../common/BaseService';
+import * as fs from "fs";
+import * as path from 'path';
+import Config from '../../config/dev';
 
 class SpecialOfferService extends BaseService<SpecialOfferModel>{
 
@@ -102,8 +105,50 @@ class SpecialOfferService extends BaseService<SpecialOfferModel>{
         });
     }
 
+    private async returnSpecialOfferImagePath(specialOfferId: number): Promise<string[]> {
+        return new Promise<string[]>(async resolve => {
+            const [ rows ] = await this.db.execute(
+                `SELECT image_path FROM special_offer WHERE special_offer_id = ?;`,
+                [ specialOfferId ]
+            );
+
+            if (!Array.isArray(rows) || rows.length === 0) return resolve([]);
+
+            const fileToDelete = rows.map(row => row.image_path);      
+
+            resolve(fileToDelete);
+        });
+    }
+
+    private deleteSpecialOfferPhotoAndResizedVersion(filesToDelete: string[]) {
+        try {
+                const fileToDelete =  filesToDelete[0];
+                fs.unlinkSync(fileToDelete);
+
+                const pathParts = path.parse(fileToDelete);
+
+                const directory = pathParts.dir;
+                const filename  = pathParts.name;
+                const extension = pathParts.ext;
+
+                const resizedImagePath = directory + "/" +
+                                             filename +
+                                             Config.fileUpload.photos.resizes[0].sufix +
+                                             extension;
+
+                fs.unlinkSync(resizedImagePath);
+            }
+        catch (e) { }
+    }
+
+    private async fileToDelete (specialOfferId:number) {
+        const file = await this.returnSpecialOfferImagePath(specialOfferId);
+        this.deleteSpecialOfferPhotoAndResizedVersion(file);
+    }
+
     public async delete(specialOfferId: number): Promise<IErrorResponse> {
         return new Promise<IErrorResponse>(resolve => {
+            this.fileToDelete(specialOfferId);
             const sql = "DELETE FROM special_offer WHERE special_offer_id = ?;";
             this.db.execute(sql, [specialOfferId])
                 .then(async result => {
