@@ -1,14 +1,42 @@
 import React from 'react';
 import './Application.sass';
 import {Container} from 'react-bootstrap'
+import TopMenu from '../TopMenu/TopMenu';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import AboutUs from '../AboutUs/AboutUs';
+import SpecialOfferPage from '../SpecialOfferPage/SpecialOfferPage';
 
 export default function Application() {
   return (
-    <Container className="Application-header">
-        <div className="Application container">
-            Front end app
-        </div>
-    </Container>
+    <BrowserRouter>
+      <Container fluid className="Application">
+          <div className="Application-header">
+              Animator app
+          </div>
+          <TopMenu/>
+          <div className="Application-body">
+            <Switch>
+              <Route path="/aboutUs" component={ AboutUs }/>
+
+              <Route exact path="/">
+                <SpecialOfferPage/>
+              </Route>
+              <Route path="/animator">
+                Animators
+              </Route>
+              <Route path="/reservation">
+                Animators
+              </Route>
+              <Route path="/logIn">
+                About Us
+              </Route>
+            </Switch>
+          </div>
+          <div>
+            &copy; 2021...
+          </div>
+      </Container>
+    </BrowserRouter>
     
   );
 }

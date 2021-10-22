@@ -40,7 +40,7 @@ const Config: IConfig = {
                 {
                     sufix: "-offerBackground",
                     fit: "cover",
-                    hieght: 1028,
+                    hieght: 1920,
                 },
                 {
                     sufix: "-thumb",
@@ -66,7 +66,7 @@ const Config: IConfig = {
                 private: readFileSync("keystore/administrator-refresh.private", "utf-8")
             }
         },
-        allowRequestsEvenWithoutValidTokens: false
+        allowRequestsEvenWithoutValidTokens: true,
     }
 };
 
