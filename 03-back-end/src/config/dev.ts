@@ -66,7 +66,7 @@ const Config: IConfig = {
                 private: readFileSync("keystore/administrator-refresh.private", "utf-8")
             }
         },
-        allowRequestsEvenWithoutValidTokens: true,
+        allowRequestsEvenWithoutValidTokens: false,
     }
 };
 

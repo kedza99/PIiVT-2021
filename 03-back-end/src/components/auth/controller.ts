@@ -5,7 +5,8 @@ import * as bcrypt from "bcrypt";
 import ITokenData from './dto/ITokenData.interface';
 import * as jwt from "jsonwebtoken";
 import Config from '../../config/dev';
-
+import { IRefreshToken } from './dto/IRefreshToken';
+import { IRefreshTokenValidator } from './dto/IRefreshToken';
 
 export default class AuthController extends BaseController{
 
@@ -66,4 +67,46 @@ export default class AuthController extends BaseController{
             refreshToken: refreshToken,
         });
     }
+
+    async administratorRefresh(req: Request, res: Response) {
+        this.refreshToken()(req, res);    
+        }
+
+    private refreshToken(): (req: Request, res: Response) => void {
+            return (req: Request, res: Response) => {
+                if (!IRefreshTokenValidator(req.body)) {
+                    return res.status(400).send(IRefreshTokenValidator.errors);
+                }
+        
+                const tokenString: string = (req.body as IRefreshToken).refreshToken;
+        
+                try {
+                    const existingData = jwt.verify(tokenString, Config.auth.administrator.auth.public) as ITokenData;
+        
+                    const newTokenData: ITokenData = {
+                        id: existingData.id,
+                        identity: existingData.identity,
+                        role:"administrator",
+                    }
+    
+                    const authToken = jwt.sign(
+                        newTokenData,
+                        Config.auth.administrator.auth.private,
+                        {
+                            algorithm: Config.auth.administrator.algorithm,
+                            issuer: Config.auth.administrator.issuer,
+                            expiresIn: Config.auth.administrator.auth.duration,
+                        },
+                    );
+        
+                    res.send({
+                        authToken: authToken,
+                        refreshToken: null,
+                    });
+                } catch (e) {
+                    return res.status(400).send("Invalid refresh token: " + e?.message);
+                }
+            }
+    }
+
 }

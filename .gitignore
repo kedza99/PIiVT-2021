@@ -4,7 +4,8 @@ temp/
 03-back-end/dist/
 03-back-end/static/uploads/
 03-back-end/package-lock.json
-03-back-end/keystore
+03-back-end/keystore/
+
 
 04-front-end/node_modules
 04-front-end/.pnp

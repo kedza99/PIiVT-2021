@@ -24,11 +24,25 @@ export default function api(
             data: body ? JSON.stringify(body) : '',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer NO-TOKEN',
+                'Authorization': 'Bearer' + getAuthToken(),
             },
         })
         .then(res => responseHandler(res, resolve))
         .catch(async err => {
+            if (("" + err?.response).includes("Bad auth token data")) {
+                const newToken: string|null = await refreshToken();
+
+                if (newToken === null) {
+                    return resolve({
+                        status: 'login',
+                        data: null,
+                    });
+                }
+
+                saveAuthToken(newToken);
+
+                return;
+            }
             if (err?.response?.status === 401) {
                 return resolve({
                     status: 'login',
@@ -63,4 +77,54 @@ function responseHandler(res: AxiosResponse<any>, resolve: (data: ApiResponse) =
         status: 'ok',
         data: res.data,
     });
+}
+
+function getAuthToken(): string {
+    return localStorage.getItem( "administrator-auth-token") ?? '';
+}
+
+function getRefreshToken(): string {
+    return localStorage.getItem("administrator-refresh-token") ?? '';
+}
+
+export function saveAuthToken(token: string) {
+    localStorage.setItem("administrator-auth-token", token);
+}
+
+export function saveRefreshToken(token: string) {
+    localStorage.setItem("administrator-refresh-token", token);
+}
+
+export function saveIdentity(identity: string) {
+    localStorage.setItem("administrator-identity", identity);
+}
+
+export function getIdentity(): string {
+    return localStorage.getItem("administrator-identity") ?? '';
+}
+
+function refreshToken(): Promise<string|null> {
+    return new Promise<string|null>(resolve => {
+        axios({
+            method: "post",
+            baseURL: AppConfiguration.API_URL,
+            url: "/auth/" + "administrator" + "/refresh",
+            data: JSON.stringify({
+                refreshToken: getRefreshToken(),
+            }),
+            headers: { 'Content-Type': 'application/json' },
+        })
+        .then(res => refreshTokenResponseHandler(res, resolve))
+        .catch(() => {
+            resolve(null);
+        });
+    });
+}
+
+function refreshTokenResponseHandler(res: AxiosResponse<any>, resolve: (data: string|null) => void) {
+    if (res.status !== 200) {
+        return resolve(null);
+    }
+
+    resolve(res.data?.authToken);
 }
