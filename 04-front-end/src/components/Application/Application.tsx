@@ -5,6 +5,7 @@ import TopMenu from '../TopMenu/TopMenu';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import AboutUs from '../AboutUs/AboutUs';
 import SpecialOfferPage from '../SpecialOfferPage/SpecialOfferPage';
+import AdministratorLogin from '../Administrator/AdministratorLogin';
 
 export default function Application() {
   return (
@@ -27,9 +28,7 @@ export default function Application() {
               <Route path="/reservation">
                 Animators
               </Route>
-              <Route path="/logIn">
-                About Us
-              </Route>
+              <Route path="/administrator/login" component={AdministratorLogin} />
             </Switch>
           </div>
           <div>

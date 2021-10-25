@@ -28,7 +28,7 @@ export default class TopMenu extends React.Component{
                     </Nav.Item>
 
                     <Nav.Item>
-                        <Link className="nav-link" to="/logIn">Admin LogIn</Link>
+                        <Link className="nav-link" to="/administrator/logIn">Admin LogIn</Link>
                     </Nav.Item>
                 </Nav>
             );

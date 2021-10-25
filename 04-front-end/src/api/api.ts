@@ -15,6 +15,8 @@ export default function api(
     path: string,
     role: ApiRole = 'administrator',
     body: any | undefined = undefined,
+    attemptToRefresh: boolean = true,
+
 ): Promise<ApiResponse> {
     return new Promise<ApiResponse>(resolve => {
         axios({
@@ -29,7 +31,7 @@ export default function api(
         })
         .then(res => responseHandler(res, resolve))
         .catch(async err => {
-            if (("" + err?.response).includes("Bad auth token data")) {
+            if (attemptToRefresh && ("" + err).includes("401")) {
                 const newToken: string|null = await refreshToken();
 
                 if (newToken === null) {
@@ -40,6 +42,15 @@ export default function api(
                 }
 
                 saveAuthToken(newToken);
+
+                api(method, path, role, body, false)
+                    .then(res => resolve(res))
+                    .catch(() => {
+                        resolve({
+                            status: 'login',
+                            data: null,
+                        });
+                    });
 
                 return;
             }
