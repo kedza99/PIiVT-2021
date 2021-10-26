@@ -9,6 +9,7 @@ const pathss: string = 'C:/Users/engin/OneDrive/Radna površina/aplikacija anima
 
 class SpecialOfferPageState {
     specialOffers: SpecialOfferModel[] = [];
+    
 }
 
 export default class SpecialOfferPage extends React.Component{
@@ -19,6 +20,7 @@ export default class SpecialOfferPage extends React.Component{
 
         this.state = {
             specialOffers: [],
+    
         };
     }
 
@@ -39,7 +41,11 @@ export default class SpecialOfferPage extends React.Component{
 
     componentDidMount() {
         this.apiGetSpecialOffers();
+  
     }
+
+    
+   
 
     renderSpecialOffer(): JSX.Element{
         return (
