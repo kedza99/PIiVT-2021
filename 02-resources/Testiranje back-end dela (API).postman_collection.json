@@ -11,6 +11,9 @@
 				{
 					"name": "GET all special offers",
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -274,13 +277,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{API_URL}}/specialOffer/1",
+							"raw": "{{API_URL}}/specialOffer/5",
 							"host": [
 								"{{API_URL}}"
 							],
 							"path": [
 								"specialOffer",
-								"1"
+								"5"
 							]
 						}
 					},
@@ -465,13 +468,13 @@
 							"formdata": [
 								{
 									"key": "data",
-									"value": "{\n    \"name\":\"dry ice specialist\",\n    \"description\":\"fsdfsdfds\",\n    \"videoURL\":\"realm\"\n}",
+									"value": "{\n    \"name\":\"stilt walk\",\n    \"description\":\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.\",\n    \"videoURL\":\"J6fnEvpUS4k\"\n}",
 									"type": "text"
 								},
 								{
 									"key": "photo1",
 									"type": "file",
-									"src": "/E:/Creaks/Creaks.exe"
+									"src": "/C:/Users/engin/OneDrive/Dokumenti/photosBinance/Dzin-specijalne-ponuda-1024x427-1.jpg"
 								}
 							]
 						},
@@ -851,6 +854,36 @@
 						}
 					]
 				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWRlbnRpdHkiOiJNYXJpamFuIiwicm9sZSI6ImFkbWluaXN0cmF0b3IiLCJpYXQiOjE2MzI1NjA1NDIsImV4cCI6MTYzMzE2NTM0MiwiaXNzIjoibG9jYWxob3N0In0.S0fEw7j-eiFSFaLcOrnsXrktqg3QkkDB_bd7bSIU6nlQd8tMkQGiGRAgYcMYBnMjhXaj3fTVhqrkG_COqv6H8kZOdvzLxjvF_pWUMjKYV1HH13muCSpdeqz5jivZECRRGhUkS36e0BpujeYXDcvt6XRFGv5YCwHkUsAa1QZ-gB2oi1Hj8TAXVY0MhUkfmPi_Ya_WXpxNnHyzYZHQfdROA4cvY908TdCOckHZuThpf6KmGqNa7H-5HfkGkPsejdBKZK_DJtr3xqCR9Vo6Xh88B-WqoAmm3tuAy-74bq_vUOYTXIGkwtkuJmGQ_5Ex3Xoo81760Sr2zirxpdJUcaImGg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
 			]
 		},
 		{
@@ -860,15 +893,29 @@
 					"name": "GET animator by ID",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"url": {
-							"raw": "{{API_URL}}/animator/3",
+							"raw": "{{API_URL}}/animator/4",
 							"host": [
 								"{{API_URL}}"
 							],
 							"path": [
 								"animator",
-								"3"
+								"4"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -1270,15 +1317,21 @@
 					"name": "DELETE animator",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "{{API_URL}}/animator/3",
+							"raw": "{{API_URL}}/animator/4",
 							"host": [
 								"{{API_URL}}"
 							],
 							"path": [
 								"animator",
-								"3"
+								"4"
 							]
 						}
 					},
@@ -1597,7 +1650,7 @@
 							"formdata": [
 								{
 									"key": "data",
-									"value": "{\n    \"name\": \"Vasilije\",\n    \"surname\": \"Redzic\",\n    \"nickname\": \"Vasa\",\n    \"description\": \"ssdfasdfrwerfsdadsfagrewa\",\n    \"price\":100,\n    \"specialOfferId\": 44\n}",
+									"value": "{\n    \"name\": \"Marijana\",\n    \"surname\": \"Maric\",\n    \"nickname\": \"Maras\",\n    \"description\": \"ssdfasdfrwerfsdadsfagrewa\",\n    \"price\":100,\n    \"specialOfferId\": 5\n}",
 									"type": "text"
 								},
 								{
@@ -1759,6 +1812,36 @@
 							"body": "[\n    {\n        \"instancePath\": \"/specialOfferId\",\n        \"schemaPath\": \"#/properties/specialOfferId/minimum\",\n        \"keyword\": \"minimum\",\n        \"params\": {\n            \"comparison\": \">=\",\n            \"limit\": 1\n        },\n        \"message\": \"must be >= 1\"\n    }\n]"
 						}
 					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			]
 		},
@@ -3376,16 +3459,16 @@
 				{
 					"name": "DELETE reservation",
 					"request": {
-						"method": "DELETE",
+						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{API_URL}}/reservation/10",
+							"raw": "{{API_URL}}/reservation/19",
 							"host": [
 								"{{API_URL}}"
 							],
 							"path": [
 								"reservation",
-								"10"
+								"19"
 							]
 						}
 					},
@@ -3396,13 +3479,13 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{API_URL}}/reservation/2",
+									"raw": "{{API_URL}}/reservation/6",
 									"host": [
 										"{{API_URL}}"
 									],
 									"path": [
 										"reservation",
-										"2"
+										"6"
 									]
 								}
 							},
@@ -3424,15 +3507,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "52"
+									"value": "53"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"34-3Woi6Y4X+M3qVvsIQ1xzM++GrlM\""
+									"value": "W/\"35-MHNkatIOgq+DCEzoGvFh4d7NVbo\""
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 11 Sep 2021 16:44:18 GMT"
+									"value": "Mon, 04 Oct 2021 11:43:25 GMT"
 								},
 								{
 									"key": "Connection",
@@ -3444,10 +3527,10 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"errorCode\": 0,\n    \"errorMessage\": \"One record deleted.\"\n}"
+							"body": "{\n    \"errorCode\": 0,\n    \"errorMessage\": \"Reservation deleted!\"\n}"
 						},
 						{
-							"name": "DELETE reservation where ID is smaller than 1",
+							"name": "DELETE reservation when ID is smaller than 1",
 							"originalRequest": {
 								"method": "DELETE",
 								"header": [],
@@ -3488,7 +3571,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 11 Sep 2021 16:44:59 GMT"
+									"value": "Mon, 04 Oct 2021 11:47:09 GMT"
 								},
 								{
 									"key": "Connection",
@@ -3503,18 +3586,18 @@
 							"body": "Bad Request"
 						},
 						{
-							"name": "DELETE reservation where ID doesnt exist",
+							"name": "DELETE reservation when ID doesnt exist",
 							"originalRequest": {
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{API_URL}}/reservation/10",
+									"raw": "{{API_URL}}/reservation/19",
 									"host": [
 										"{{API_URL}}"
 									],
 									"path": [
 										"reservation",
-										"10"
+										"19"
 									]
 								}
 							},
@@ -3544,7 +3627,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 11 Sep 2021 16:45:25 GMT"
+									"value": "Mon, 04 Oct 2021 11:47:29 GMT"
 								},
 								{
 									"key": "Connection",
@@ -3645,7 +3728,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"Goran\",\r\n    \"password\": \"66674da\"\r\n}\r\n",
+							"raw": "{\r\n    \"username\": \"Borijan\",\r\n    \"password\": \"zzppKK1\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4391,8 +4474,671 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "administrator",
+					"item": [
+						{
+							"name": "Post a new login request",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Borijan\",\r\n    \"password\": \"zzppKK1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/auth/administrator/login",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"auth",
+										"administrator",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Post a new login request when administrator does not exist",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"Marija\",\r\n    \"password\": \"33ssDy\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_URL}}/auth/administrator/login",
+											"host": [
+												"{{API_URL}}"
+											],
+											"path": [
+												"auth",
+												"administrator",
+												"login"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/plain; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "9"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"9-0gXL1ngzMqISxa6S1zx3F4wtLyg\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 23 Sep 2021 11:48:31 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "Not Found"
+								},
+								{
+									"name": "Post a new login request when password is invalid",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"Marijan\",\r\n    \"password\": \"33ssDyy\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_URL}}/auth/administrator/login",
+											"host": [
+												"{{API_URL}}"
+											],
+											"path": [
+												"auth",
+												"administrator",
+												"login"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "31"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1f-6m/3ihwm3QpkaqHI5ehdTGQq6J0\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 23 Sep 2021 11:50:17 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "Invalid administrator password."
+								},
+								{
+									"name": "Post a new login request- 200OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"Marijan\",\r\n    \"password\": \"33ssDy\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_URL}}/auth/administrator/login",
+											"host": [
+												"{{API_URL}}"
+											],
+											"path": [
+												"auth",
+												"administrator",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1072"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"430-Rp9qBMlM5YzAoclGbKc/Z0AeB+o\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 23 Sep 2021 14:00:16 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"authToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWRlbnRpdHkiOiJNYXJpamFuIiwicm9sZSI6ImFkbWluaXN0cmF0b3IiLCJpYXQiOjE2MzI0MDU2MTYsImV4cCI6MTYzMzAxMDQxNiwiaXNzIjoibG9jYWxob3N0In0.ckLbT3Qb3uC8Jnkjb5uqIxXWk09Cd4fZKEK4pVT-wLTsKVv6gWcM0YqUfO-Ta3pc5OMExmoxGYJIhaI6_GesiQN7Vya2GHoWCgYGj1Oaf6QDae9NMZ05O9OFIzTFX1f0DhOFpKHNX-4f7sPpwSa0QOEQnicur29dPXH-Odj74sc_-SO1etiF86pEIitq3YooeSRBmTDKZUiIaXNH1i7vL-FSoJxkGBv1Q9aZ6SIs_k5Q2KBc1sySV85RVJj7B1izHq216b0hx62bsf9CCPAAdQ-7Td4HguB0Vmw6v7sIr0TB8CP-XdKRQLssF4cgCJi4DgKR2xT_MF_skJGbGl4P4A\",\n    \"refreshToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWRlbnRpdHkiOiJNYXJpamFuIiwicm9sZSI6ImFkbWluaXN0cmF0b3IiLCJpYXQiOjE2MzI0MDU2MTYsImV4cCI6MTY2Mzk0MTYxNiwiaXNzIjoibG9jYWxob3N0In0.cHR_zwr6Lcx8Ec-8RSz2LGd4pIBJmJdLcTjALACOW85N1F5Cl79Vx5M27yL08jS2UM9MRa1NJKHZKwsTpS9RteI5p9A0R3pD6WEzYHFcSA7BiJhZKI-gE9tR7j1GVinqn2fjRAJPMPUwaTR3X2RM4VhE2Y2RHeP2k818JwhqotF3JP3Ya1oZnKOQMi2ayOofdYYoxMBIJbhyJJBgfRP7VJHJwNyZBkR6vK0PB8gNWFpX8hudxukUI_8_2Fnu3L8DkDRd1bciVcAlnFqBVueXcV6GBhJ2mb05Hb1nZZ6LJhMCzov-Ynbotl7FB90DJ-93etnqhCFJMErZyluXfKkFog\"\n}"
+								},
+								{
+									"name": "Post a new login request - when administrator is inactive",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"Marijan\",\r\n    \"password\": \"33ssDy\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_URL}}/auth/administrator/login",
+											"host": [
+												"{{API_URL}}"
+											],
+											"path": [
+												"auth",
+												"administrator",
+												"login"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "31"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1f-gGX/kiT3mamimbuyelW2JDm0OL8\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 23 Sep 2021 21:38:44 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "Administrator account inactive."
+								}
+							]
+						},
+						{
+							"name": "Post a new token refresh request",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWRlbnRpdHkiOiJCb3JpamFuIiwicm9sZSI6ImFkbWluaXN0cmF0b3IiLCJpYXQiOjE2MzUxMDYzMzAsImV4cCI6MTY2NjY0MjMzMCwiaXNzIjoibG9jYWxob3N0In0.GntPADyL5bZPvXHLF_Cc4mfVJGynBITjFzL_LqHepQ1f5b118wAcgTersRBASJxR3Zk8-bTudX6-KR1JjZQucbzEEDvOju8nURODRYXi5ccjmrZ9AG0uwgAlnL0sRF_TqKuF-uaqhmQnnkDdEC8kUz-vEAJwfNISOOZcXMBhRsd86XCbjTAUVthElH2jFuFU5HjR9I6NwGwo5SqUKPWKcqFpxA2PB5V86Uo5cWXIm3sVWWsMErF9YwvosWTw_s63wxAyv07NRuS8_-ba4wT2vxYSGAZSsr6y20EAyOAp3piBMb9-Nr1Qw55sd23Lq3V5isMVTraBUqM8_26nPFe1uA\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_URL}}/auth/administrator/refresh",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"auth",
+										"administrator",
+										"refresh"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Invalid refresh token",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"refreshToken\": \"\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_URL}}/auth/administrator/refresh",
+											"host": [
+												"{{API_URL}}"
+											],
+											"path": [
+												"auth",
+												"administrator",
+												"refresh"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:3000"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "43"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2b-xnXyNLUHmOEF64WAWgWQDNhZTi4\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 22 Oct 2021 14:41:16 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "Invalid refresh token: jwt must be provided"
+								},
+								{
+									"name": "Valid refresh",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWRlbnRpdHkiOiJCb3JpamFuIiwicm9sZSI6ImFkbWluaXN0cmF0b3IiLCJpYXQiOjE2MzUxMDYzMzAsImV4cCI6MTY2NjY0MjMzMCwiaXNzIjoibG9jYWxob3N0In0.GntPADyL5bZPvXHLF_Cc4mfVJGynBITjFzL_LqHepQ1f5b118wAcgTersRBASJxR3Zk8-bTudX6-KR1JjZQucbzEEDvOju8nURODRYXi5ccjmrZ9AG0uwgAlnL0sRF_TqKuF-uaqhmQnnkDdEC8kUz-vEAJwfNISOOZcXMBhRsd86XCbjTAUVthElH2jFuFU5HjR9I6NwGwo5SqUKPWKcqFpxA2PB5V86Uo5cWXIm3sVWWsMErF9YwvosWTw_s63wxAyv07NRuS8_-ba4wT2vxYSGAZSsr6y20EAyOAp3piBMb9-Nr1Qw55sd23Lq3V5isMVTraBUqM8_26nPFe1uA\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_URL}}/auth/administrator/refresh",
+											"host": [
+												"{{API_URL}}"
+											],
+											"path": [
+												"auth",
+												"administrator",
+												"refresh"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:3000"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "555"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"22b-5gNxaU+gMH6yEFAbORTGrkHe/bs\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 24 Oct 2021 20:12:26 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"authToken\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWRlbnRpdHkiOiJCb3JpamFuIiwicm9sZSI6ImFkbWluaXN0cmF0b3IiLCJpYXQiOjE2MzUxMDYzNDUsImV4cCI6MTYzNTcxMTE0NSwiaXNzIjoibG9jYWxob3N0In0.hajomboA8Fk9_72pdehfepTIwjrj19UHGHR_gfTjV9TLFi-qzFqckqkfEL9NPopW4_XB60t_UybeplAaSXlkT2j5TPCOM6PV-z1myu2bPFElSA2cI2SXlhtFo5xLnkj7w2IUWgsy06emlWS8xPIVKPzw2SueQN5vATsqYNtiZjrZNxhm7FRpXKTwVb5MF-sXPOjxwpPHAG5T9-ii2Vyi0U6VJH1bzmUoYWv9-ClAA8oL9dq0qrhLNhil4YASlgLus8QhcX8zsS1FS__srpgQwZtrXrH5iK5d3_qE-b_EjFHrMgCQy4x-y3_01jrM2rfWsS-t-MIyjqElvVu0CDEjDQ\",\n    \"refreshToken\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "GET Administrator ok",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWRlbnRpdHkiOiJCb3JpamFuIiwicm9sZSI6ImFkbWluaXN0cmF0b3IiLCJpYXQiOjE2MzUxODk0MjIsImV4cCI6MTYzNTc5NDIyclclboxEpW8Nb1yoYcP65xBvHvI-28d04iOPf42PBW5CU6ly36_vnbRJSe4wSO3EbvUhOriVxGndM1FHcsPJB6E0BRnHIX94vm9nJIerBts7ml-BGhBnloPDvXaobnxAQuXBk4sx5UzWrlXjBCnx_hTNscFcQaeqdmwKLxZ9uud0oOqa4DLikAqdnxeIni1kGU5ziubnJbK23eWXZvvMF6Ysr93il8LedwVA067dcDZ-3gVy2Is_W9jHNMv2GsyrMSySlv-vcqCgSHG6vdKHQHs63e1eko5mGBpx3jeIMRM1VC3Xu9qGcKoF0vxpacUg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_URL}}/auth/administrator/ok",
+									"host": [
+										"{{API_URL}}"
+									],
+									"path": [
+										"auth",
+										"administrator",
+										"ok"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Administrator ok - 200OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_URL}}/auth/administrator/ok",
+											"host": [
+												"{{API_URL}}"
+											],
+											"path": [
+												"auth",
+												"administrator",
+												"ok"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:3000"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2-nOO9QiTIwXgNtWtBJezz8kv3SLc\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 25 Oct 2021 19:17:18 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "OK"
+								},
+								{
+									"name": "Get Administrator ok - token validation error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_URL}}/auth/administrator/ok",
+											"host": [
+												"{{API_URL}}"
+											],
+											"path": [
+												"auth",
+												"administrator",
+												"ok"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://localhost:3000"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "64"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"40-QulHyRuiMGMYD2ZhOg5j8kQnPMQ\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 25 Oct 2021 20:47:29 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "Token validation error: {\"isValid\":false,\"data\":\"jwt malformed\"}"
+								}
+							]
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWRlbnRpdHkiOiJCb3JpamFuIiwicm9sZSI6ImFkbWluaXN0cmF0b3IiLCJpYXQiOjE2MzQ5OTY4MDYsImV4cCI6MTYzNTYwMTYwNiwiaXNzIjoibG9jYWxob3N0In0.QkxklfY9SB456tcW_pY9hm84QKy-_yy07yzDrG93kK-sj-E8k6M7f4D_EO-Put9vG6ErcE4Cw486L682QKLm5mVfkA02tQpkM0XscnO7ukR39Jolc89gyvC9805YRwP6kgXt5Mi-lN7WiNtLfbt51_O2j9HdfdM5Qbon36CxCg_b8oQizDLS0nNH2ghR3EXOXGIgLZDx9FGlVa9b640ZIUpLtaX4SjDTSS3ZmmjOWK1dViCE-QDMictcaNfeEDues3CunfjjypoujafU3zgx0NVHhtj0M2m8Wpin65pR8RQd7CfyGqF-w-YFleOo0fDviPyUWWxWbDy8qvPCF3dkeA",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			]
 		}
 	],
+	"auth": {
+		"type": "bearer"
+	},
 	"event": [
 		{
 			"listen": "prerequest",
@@ -4417,6 +5163,10 @@
 		{
 			"key": "API_URL",
 			"value": "http://localhost:4080"
+		},
+		{
+			"key": "API_AUTH_ADMINISTRATOR_TOKEN",
+			"value": ""
 		}
 	]
 }
